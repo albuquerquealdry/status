@@ -16,7 +16,6 @@ export class StatusService {
     return 'Planilha atualizadda'
   }
   async parseCep(id) {
-
     let test =await this.statusRepository.cepSearch(id);
     let {localidade = '' ,uf = '',logradouro = '', bairro = '', cep = ''} =test;
     sheet(logradouro, bairro, localidade, cep, uf)

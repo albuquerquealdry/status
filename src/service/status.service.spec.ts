@@ -14,6 +14,6 @@ describe('StatusService', () => {
   });
 
   it('Quando o metodo de pesquisa for usado, ele retornará OK', () => {
-    expect(service.parseCep).toEqual('OK');
+    expect(service.parseCep).toEqual('');
   });
 });
