@@ -20,7 +20,8 @@ export class StatusController {
 
   @Get(':id')
   parseCep(@Param('id') id: string, @Res() response: Response) {
-    return response.send('Entrega inserida na Planilha');
+    response.send('Entrega inserida na Planilha')
+    return this.statusService.parseCep(id);
 }
 
 
