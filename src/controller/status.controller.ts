@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, Res } from '@nestjs/
 import { StatusService } from '../service/status.service';
 import { CreateStatusDto } from '../dto/create-status.dto';
 import { UpdateStatusDto } from '../dto/update-status.dto';
-import { Response } from 'express'
+import { response, Response } from 'express'
 
 @Controller('status')
 export class StatusController {
@@ -19,8 +19,8 @@ export class StatusController {
   }
 
   @Get(':id')
-  parseCep(@Param('id') id: string) {
-    return this.statusService.parseCep(id);
+  parseCep(@Param('id') id: string, @Res() response: Response) {
+    return response.send('Entrega inserida na Planilha');
 }
 
 
