@@ -1,6 +1,5 @@
-import { Injectable } from "@nestjs/common"
-
-const axios =  require('axios')
+import { Injectable } from "@nestjs/common";
+import axios from 'axios';
 
 @Injectable()
 export class StatusRepository {
@@ -15,6 +14,6 @@ async cepSearch(cep: string){
         const {data={}} = response;
         return data;
     }).catch((erro) =>{console.log("Deu erro: \n"+ erro)});     
-    }
+    };
 
-}
+};

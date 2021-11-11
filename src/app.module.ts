@@ -5,7 +5,7 @@ import { StatusRepository } from './repository/status.repository';
 
 
 @Module({
-  imports: [],
+  imports: [StatusRepository],
   controllers: [StatusController],
   providers: [
     StatusService,
