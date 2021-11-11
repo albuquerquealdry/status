@@ -4,15 +4,16 @@ import { CreateStatusDto } from '../dto/create-status.dto';
 import { UpdateStatusDto } from '../dto/update-status.dto';
 import { response, Response } from 'express'
 
+
 @Controller('status')
 export class StatusController {
   constructor(private readonly statusService: StatusService) {}
   @Get()
-  findAll(@Res()response: Response) {
-    return response.send({message:'Coloque o cep na url'});
+  findAll() {
+    return ({message:'Coloque o cep na url'});
   }
   @Get(':id')
-  async parseCep(@Param('id') id: string, @Res() response: Response) {
+  async parseCep(@Param('id') id: string) {
     try {
       let message = await this.statusService.parseCep(id);
       //console.log(message)
@@ -20,7 +21,6 @@ export class StatusController {
     } catch (error) {
       //let message = error
       response.send(`deu errado \n ${error}`)
-    }
-    
+    }  
 }
 }

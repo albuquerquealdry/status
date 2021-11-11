@@ -20,7 +20,7 @@ describe('StatusService', () => {
     statusRepository.cepSearch = jest.fn(()=>Promise.resolve({}));
 
     const resp = await service.parseCep(mock);
-    expect(resp).toEqual('A entrega foi inserida na planilha');
+    expect(resp).toEqual('A entrega foi inserida na planilha com sucesso');
   
   })
   it('Chamada do create', ()=>{

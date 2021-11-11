@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { StatusController } from './status.controller';
 import { StatusService } from '../service/status.service';
-import { StatusRepository } from 'src/repository/status.repository';
 import { response } from 'express';
+import { getMockReq, getMockRes } from '@jest-mock/express'
 
 describe('StatusController', () => {
   let controller: StatusController;
@@ -21,9 +21,7 @@ describe('StatusController', () => {
           }
         },
       ],
-    }).compile();
-    
-    
+    }).compile();    
     statusService = module.get <StatusService>(StatusService)
     controller = new  StatusController(statusService)
   });
@@ -34,18 +32,17 @@ describe('StatusController', () => {
   describe('Teste Get All', ()=>{
     it('Isso Deve Retornar a informação do dado na url', async ()=>{
       const result = controller.findAll()
-      expect(result).toEqual('Coloque o cep na url')
-    
+      expect(result).toEqual({message:'Coloque o cep na url'})
     })
   describe('Teste parse ID', ()=>{
     
     it ('o parseCep deve retornar os dados do usuário', async ()=>{
       let id = '54510280'
-      const result = controller.parseCep()
+      const result = controller.parseCep
       expect (result).toEqual(response.send('Entrega inserida na Planilha'))
-      expect (result).toEqual(statusService.parseCep(id))
-      
+      expect (result).toEqual(statusService.parseCep(id))  
     })
   })
   })
   });
+  
