@@ -17,10 +17,10 @@ export class StatusController {
     try {
       let message = await this.statusService.parseCep(id);
       //console.log(message)
-      response.send(message)
+     return  (message)
     } catch (error) {
       //let message = error
-      response.send(`deu errado \n ${error}`)
+      return (`deu errado \n ${error}`)
     }  
 }
 }
