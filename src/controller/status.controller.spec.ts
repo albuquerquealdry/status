@@ -2,9 +2,6 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { StatusController } from './status.controller';
 import { StatusService } from '../service/status.service';
 import { StatusRepository } from 'src/repository/status.repository';
-import { Res, Response } from '@nestjs/common';
-import { send } from 'process';
-import { Any } from 'typeorm';
 import { response } from 'express';
 
 describe('StatusController', () => {
@@ -44,7 +41,7 @@ describe('StatusController', () => {
     
     it ('o parseCep deve retornar os dados do usuário', async ()=>{
       let id = '54510280'
-      const result = controller.parseCep(id, response)
+      const result = controller.parseCep()
       expect (result).toEqual(response.send('Entrega inserida na Planilha'))
       expect (result).toEqual(statusService.parseCep(id))
       

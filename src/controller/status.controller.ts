@@ -14,9 +14,8 @@ export class StatusController {
   @Get(':id')
   parseCep(@Param('id') id: string, @Res() response: Response) {
     try {
-      response.send('Entrega inserida na Planilha')
-      this.statusService.parseCep(id);
-      return response.send('A entrega foi inserida na planilha')
+      let message = this.statusService.parseCep(id);
+      response.send(message)
     } catch (error) {
       response.send(error)
     }
