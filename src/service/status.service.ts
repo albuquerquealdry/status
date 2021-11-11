@@ -15,6 +15,6 @@ export class StatusService {
     const test =await this.statusRepository.cepSearch(id);
     let {localidade = '' ,uf = '',logradouro = '', bairro = '', cep = ''} =test;
     sheet(logradouro, bairro, localidade, cep, uf)
-    return ''
+    return 'A entrega foi inserida na planilha'
   };
 };
