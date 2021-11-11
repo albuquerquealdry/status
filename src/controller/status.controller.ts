@@ -12,9 +12,10 @@ export class StatusController {
     return response.send({message:'Coloque o cep na url'});
   }
   @Get(':id')
-  parseCep(@Param('id') id: string, @Res() response: Response) {
+  async parseCep(@Param('id') id: string, @Res() response: Response) {
     try {
-      let message = this.statusService.parseCep(id);
+      let message = await this.statusService.parseCep(id);
+      //console.log(message)
       response.send(message)
     } catch (error) {
       response.send(error)
