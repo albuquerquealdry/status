@@ -18,7 +18,8 @@ export class StatusController {
       //console.log(message)
       response.send(message)
     } catch (error) {
-      response.send(error)
+      //let message = error
+      response.send(`deu errado \n ${error}`)
     }
     
 }
