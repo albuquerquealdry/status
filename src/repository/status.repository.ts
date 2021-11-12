@@ -13,7 +13,9 @@ async cepSearch(cep: string){
         const {data={}} = response;
         return data;
     }).catch((error) => {
-        throw new Error(error)
+        //throw new Error(error)
+        let response  = 'erro'
+        return response
     });     
     };
 

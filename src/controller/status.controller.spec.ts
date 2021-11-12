@@ -40,15 +40,15 @@ describe('StatusController', () => {
   describe('Teste parse ID', ()=>{
     
     it ('o parseCep deve retornar a messagem de exito', async ()=>{
-      statusRepository.cepSearch = jest.fn(()=>Promise.resolve({Error: 'Request failed with status code 400'}));
-      let mockid = '54510280'
+      statusRepository.cepSearch = jest.fn(()=>Promise.resolve(new Error()));
+      let mockid = '5451028l0'
       const result = await controller.parseCep(mockid)
       expect(result).toEqual(result)
       
     })
     it ('o parseCep deve retornar a mensagem de acerto', async ()=>{
       statusRepository.cepSearch = jest.fn(()=>Promise.resolve({Error: 'Request failed with status code 400'}));
-      let mockid = '54510280'
+      let mockid = '54510280l'
       const result = await controller.parseCep(mockid)
       expect(result).toEqual(result)  
     });
