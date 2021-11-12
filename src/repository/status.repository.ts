@@ -10,7 +10,6 @@ export class StatusRepository {
 async cepSearch(cep: string){
     return axios.get(`https://viacep.com.br/ws/${cep}/json/`,)
     .then((response) =>  {
-        console.log(response);
         const {data={}} = response;
         return data;
     }).catch((erro) =>{console.log("Deu erro: \n"+ erro)});     

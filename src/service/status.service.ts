@@ -11,11 +11,11 @@ export class StatusService {
   findAll() {
     return 'Planilha atualizadda'
   };
-  async parseCep(id) {
+  async parseCep(id) {      
     const test =await this.statusRepository.cepSearch(id);
-    let {localidade = '' ,uf = '',logradouro = '', bairro = '', cep = ''} =test;
-    sheet(logradouro, bairro, localidade, cep, uf)
-    const response = 'A entrega foi inserida na planilha com sucesso'
-    return response
-  };
-};
+        let {localidade,uf ,logradouro , bairro , cep } =test;
+        sheet(logradouro, bairro, localidade, cep, uf)
+        const response ='A entrega foi inserida na planilha com sucesso'
+        return response
+  }
+}

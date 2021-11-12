@@ -14,13 +14,21 @@ export class StatusController {
   }
   @Get(':id')
   async parseCep(@Param('id') id: string) {
-    try {
-      let message = await this.statusService.parseCep(id);
-      //console.log(message)
-     return  (message)
-    } catch (error) {
-      //let message = error
-      return (`deu errado \n ${error}`)
-    }  
+    let message = await this.statusService.parseCep(id)
+      console.log(message)  
+      if (message === 'O cep é Inválido'){
+          return message
+        }
+      else {
+        
+      }
 }
 }
+// try {
+//   let message = await this.statusService.parseCep(id);
+//   //console.log(message)
+//  return  (message)
+// } catch (error) {
+//   //let message = error
+//   return (`deu errado \n ${error}`)
+// }

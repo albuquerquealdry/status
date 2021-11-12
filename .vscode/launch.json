@@ -17,6 +17,18 @@
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js"
             ]
+        },
+        {
+            "type": "node",
+            "request":"launch",
+            "name": "jest",
+            "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
+            "args": [
+                "-i"
+            ],
+            "skipFiles": ["<node_internals>/**/*.js",
+            "node_modules"
+            ]
         }
     ]
 }
