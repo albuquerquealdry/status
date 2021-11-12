@@ -40,7 +40,7 @@ describe('StatusController', () => {
   describe('Teste parse ID', ()=>{
     
     it ('o parseCep deve retornar a messagem de exito', async ()=>{
-      statusRepository.cepSearch = jest.fn(()=>Promise.resolve(new Error()));
+      statusRepository.cepSearch = jest.fn(()=>Promise.resolve());
       let mockid = '5451028l0'
       const result = await controller.parseCep(mockid)
       expect(result).toEqual(result)
