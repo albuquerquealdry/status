@@ -15,7 +15,7 @@ export class StatusController {
   @Get(':id')
   async parseCep(@Param('id') id: string) {
     let message = await this.statusService.parseCep(id)
-      console.log(message)  
+       
       if (message === 'O cep é Inválido'){
           return message
         }

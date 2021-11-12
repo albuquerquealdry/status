@@ -12,7 +12,9 @@ async cepSearch(cep: string){
     .then((response) =>  {
         const {data={}} = response;
         return data;
-    }).catch((erro) =>{console.log("Deu erro: \n"+ erro)});     
+    }).catch((error) => {
+        throw new Error(error)
+    });     
     };
 
 };

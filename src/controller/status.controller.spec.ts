@@ -50,9 +50,7 @@ describe('StatusController', () => {
       statusRepository.cepSearch = jest.fn(()=>Promise.resolve({Error: 'Request failed with status code 400'}));
       let mockid = '54510280'
       const result = await controller.parseCep(mockid)
-      expect(result).toEqual(result)
-      
-      
+      expect(result).toEqual(result)  
     });
     //it ( 'O parseCep deve retornar erro' async ()=>{
       
